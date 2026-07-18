@@ -150,7 +150,52 @@ Funds never expire • Used instantly on all purchases
 <section class="dashboard-card">
 
     <h2>Top Up Wallet</h2>
+<section class="dashboard-card">
 
+    <h2>Manual Wallet Top-up</h2>
+
+    <p>
+        Online payments are currently unavailable. Please transfer to the account below and send your payment receipt for verification.
+    </p>
+
+    <div class="bank-details">
+
+        <div class="bank-row">
+            <span>Bank</span>
+            <strong>PalmPay</strong>
+        </div>
+
+        <div class="bank-row">
+            <span>Account Name</span>
+            <strong>Ogaga Blessing Idoghe</strong>
+        </div>
+
+        <div class="bank-row">
+            <span>Account Number</span>
+
+            <div class="account-copy">
+                <strong id="accountNumber">9117412352</strong>
+
+                <button id="copyAccountBtn" class="copy-btn">
+                    Copy
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <button class="primary-btn" disabled>
+        Online Payment (Coming Soon)
+    </button>
+
+    <a href="https://wa.me/2349117412352"
+       target="_blank"
+       class="whatsapp-btn">
+        Send Receipt on WhatsApp
+    </a>
+
+</section>
     <p>
         Pay securely via Flutterwave. Card, Bank Transfer and USSD supported.
     </p>
@@ -199,5 +244,6 @@ Funds never expire • Used instantly on all purchases
     <p class="payment-note">
         Secured by Flutterwave • No redirect • Pay right here
     </p>
-
+<script src="script.js"></script>
+<script type="module" src="wallet.js"></script>
 </section>
