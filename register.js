@@ -6,7 +6,10 @@ import {
     signInWithRedirect,
     getRedirectResult,
     doc,
-    setDoc
+    setDoc,
+    collection,
+    addDoc,
+    serverTimestamp
 } from "./firebase.js";
 
 // =========================
@@ -42,7 +45,15 @@ if (form) {
     totalOrders: 0,
     createdAt: new Date().toISOString()
 });
-
+await addDoc(
+    collection(db, "users", userCredential.user.uid, "notifications"),
+    {
+        title: "Welcome 🎉",
+        message: "Your TheSuftMedia account has been created successfully.",
+        time: serverTimestamp(),
+        read: false
+    }
+);
             alert("Account created successfully!");
 
             window.location.href = "login.html";
