@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Support | TheSuftMedia</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="sidebar-overlay"></div>
+
+<!-- Use the SAME sidebar from dashboard.html here -->
+
+<div class="dashboard">
+
+<header class="dashboard-header">
+
+<button id="menuBtn" class="menu-btn">
+<i class="fa-solid fa-bars"></i>
+</button>
+
+<div class="header-right">
+
+<div class="wallet-pill">₦0</div>
+
+<button class="theme-btn">
+<i class="fa-regular fa-sun"></i>
+</button>
+
+<a href="notifications.html" class="notify-btn">
+<i class="fa-regular fa-bell"></i>
+</a>
+
+<div class="profile-avatar">
+DD
+</div>
+
+</div>
+
+</header>
+
+<main class="dashboard-content">
+
+<h1>Support</h1>
+
+<p>Get help with your orders and account</p>
+
+<button class="primary-btn" id="newTicket">
+
+<i class="fa-solid fa-plus"></i>
+
+New ticket
+
+</button>
+
+<div class="empty-card">
+
+<div class="empty-icon">
+<i class="fa-regular fa-message"></i>
+</div>
+
+<h2>No tickets yet</h2>
+
+<p>
+Open a ticket if you need help with an order or your account.
+</p>
+
+<button class="primary-btn" id="firstTicket">
+Open first ticket
+</button>
+
+</div>
+
+</main>
+
+</div>
+
+<!-- Popup -->
+
+<div class="ticket-modal" id="ticketModal">
+
+<div class="ticket-box">
+
+<div class="ticket-header">
+
+<h2>Open a support ticket</h2>
+
+<button id="closeModal">&times;</button>
+
+</div>
+
+<label>Subject</label>
+
+<input
+type="text"
+id="subject"
+placeholder="What do you need help with?">
+
+<label>Message</label>
+
+<textarea
+id="message"
+rows="5"
+placeholder="Describe your issue..."></textarea>
+
+<button
+class="primary-btn"
+id="submitTicket">
+
+Submit ticket
+
+</button>
+
+<button
+class="cancel-btn"
+id="cancelTicket">
+
+Cancel
+
+</button>
+
+</div>
+
+</div>
+
+<script type="module" src="support.js"></script>
+
+</body>
+</html>
