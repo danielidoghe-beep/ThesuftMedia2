@@ -35,10 +35,13 @@ if (form) {
             );
 
             await setDoc(doc(db, "users", userCredential.user.uid), {
-                firstName,
-                lastName,
-                email
-            });
+    firstName,
+    lastName,
+    email,
+    wallet: 0,
+    totalOrders: 0,
+    createdAt: new Date().toISOString()
+});
 
             alert("Account created successfully!");
 
@@ -95,10 +98,13 @@ getRedirectResult(auth)
     const lastName = names.slice(1).join(" ");
 
     await setDoc(doc(db, "users", user.uid), {
-        firstName,
-        lastName,
-        email: user.email
-    });
+    firstName,
+    lastName,
+    email: user.email,
+    wallet: 0,
+    totalOrders: 0,
+    createdAt: new Date().toISOString()
+});
 
     window.location.href = "dashboard.html";
 
