@@ -24,7 +24,18 @@ onAuthStateChanged(auth, async (user) => {
             const userData = userSnap.data();
 
             document.getElementById("displayName").textContent =
-                userData.firstName;
+    userData.firstName;
+
+const wallet = userData.wallet || 0;
+
+const formattedWallet = new Intl.NumberFormat("en-NG", {
+    style: "currency",
+    currency: "NGN",
+    minimumFractionDigits: 0
+}).format(wallet);
+
+document.getElementById("walletBalance").textContent = formattedWallet;
+document.getElementById("walletPill").textContent = formattedWallet;
 
         }
 
