@@ -1798,3 +1798,31 @@ font-size:18px;
     color:#777;
     text-align:center;
 }
+.bank-details{
+    margin:25px 0;
+}
+
+.bank-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 0;
+    border-bottom:1px solid #eee;
+}
+
+.account-copy{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.copy-btn{
+    border:none;
+    background:#4b8b00;
+    color:#fff;
+    padding:8px 14px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:600;
+}
