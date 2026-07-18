@@ -1,64 +1,86 @@
 import {
-auth,
-db,
-onAuthStateChanged,
-doc,
-getDoc
+    auth,
+    db,
+    onAuthStateChanged,
+    doc,
+    getDoc,
+    collection,
+    getDocs,
+    query,
+    orderBy
 } from "./firebase.js";
 
-// Sidebar
+const list = document.getElementById("transactionsList");
 
+// Sidebar
 const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.querySelector(".dashboard-sidebar");
 const overlay = document.querySelector(".sidebar-overlay");
 
-menuBtn.onclick = () => {
-sidebar.classList.toggle("active");
-overlay.classList.toggle("active");
-};
-
-overlay.onclick = () => {
-sidebar.classList.remove("active");
-overlay.classList.remove("active");
-};
-
-// Load User
-
-onAuthStateChanged(auth, async (user)=>{
-
-if(!user){
-window.location.href="login.html";
-return;
+if(menuBtn){
+    menuBtn.onclick = () => {
+        sidebar.classList.add("active");
+        overlay.classList.add("active");
+    };
 }
 
-const snap = await getDoc(doc(db,"users",user.uid));
-
-if(snap.exists()){
-
-const data=snap.data();
-
-const balance=data.balance || 0;
-
-document.getElementById("walletPill").innerHTML=
-`₦${Number(balance).toLocaleString()}`;
-
+if(overlay){
+    overlay.onclick = () => {
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+    };
 }
 
-});
+onAuthStateChanged(auth, async(user)=>{
 
-// Search
+    if(!user){
+        location.href="login.html";
+        return;
+    }
 
-const search=document.getElementById("searchInput");
+    // Wallet Balance
+    const userSnap = await getDoc(doc(db,"users",user.uid));
 
-search.addEventListener("keyup",()=>{
+    if(userSnap.exists()){
 
-const value=search.value.toLowerCase();
+        const data = userSnap.data();
 
-document.querySelectorAll(".transaction-item").forEach(item=>{
+        const balance = data.wallet || 0;
 
-item.style.display=item.innerText.toLowerCase().includes(value)
-?"flex":"none";
+        document.getElementById("walletPill").innerHTML =
+        "₦" + balance.toLocaleString();
 
-});
+    }
+
+    // Transactions
+    const transRef = collection(db,"users",user.uid,"transactions");
+
+    const q = query(transRef, orderBy("date","desc"));
+
+    const snap = await getDocs(q);
+
+    if(snap.empty) return;
+
+    list.innerHTML = "";
+
+    snap.forEach((doc)=>{
+
+        const t = doc.data();
+
+        list.innerHTML += `
+
+        <div class="dashboard-card transaction-item">
+
+            <h3>${t.title}</h3>
+
+            <p>${t.type}</p>
+
+            <strong>₦${Number(t.amount).toLocaleString()}</strong>
+
+        </div>
+
+        `;
+
+    });
 
 });
