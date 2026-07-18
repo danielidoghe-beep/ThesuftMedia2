@@ -34,3 +34,16 @@ onAuthStateChanged(auth, async (user) => {
     }
 
 });
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.querySelector(".dashboard-sidebar");
+const overlay = document.querySelector(".sidebar-overlay");
+
+menuBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("active");
+    overlay.classList.toggle("active");
+});
+
+overlay.addEventListener("click", () => {
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+});
