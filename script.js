@@ -50,15 +50,27 @@ faqItems.forEach(item => {
 // MOBILE MENU
 // =========================
 
-const menuButton = document.querySelector(".menu-btn");
-const nav = document.querySelector(".nav");
+const menuBtn = document.querySelector(".menu-btn");
+const mobileMenu = document.querySelector(".mobile-menu");
+const menuIcon = menuBtn.querySelector("i");
 
-menuButton.addEventListener("click", () => {
+menuBtn.addEventListener("click", () => {
 
-    nav.classList.toggle("active");
+    mobileMenu.classList.toggle("active");
+
+    if (mobileMenu.classList.contains("active")) {
+
+        menuIcon.classList.remove("fa-bars");
+        menuIcon.classList.add("fa-xmark");
+
+    } else {
+
+        menuIcon.classList.remove("fa-xmark");
+        menuIcon.classList.add("fa-bars");
+
+    }
 
 });
-
 
 // =========================
 // DARK MODE
