@@ -15,9 +15,13 @@ import {
 import {
     getFirestore,
     doc,
-    setDoc,
     getDoc,
-    updateDoc
+    setDoc,
+    updateDoc,
+    collection,
+    getDocs,
+    query,
+    orderBy
 } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -42,18 +46,21 @@ export {
     auth,
     db,
     provider,
-
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signInWithRedirect,
     getRedirectResult,
-
     sendPasswordResetEmail,
     signOut,
     onAuthStateChanged,
 
     doc,
-    setDoc,
     getDoc,
-    updateDoc
+    setDoc,
+    updateDoc,
+
+    collection,
+    getDocs,
+    query,
+    orderBy
 };
