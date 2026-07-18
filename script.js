@@ -121,23 +121,23 @@ if (togglePassword && passwordInput) {
 
 // Show / Hide Password
 
-const togglePassword = document.querySelector(".toggle-password");
-const passwordInput = document.querySelector(".password-box input");
+const registerTogglePassword = document.querySelector(".toggle-password");
+const registerPasswordInput = document.querySelector(".password-box input");
 
-if (togglePassword && passwordInput) {
+if (registerTogglePassword && registerPasswordInput) {
 
-    togglePassword.addEventListener("click", () => {
+    registerTogglePassword.addEventListener("click", () => {
 
-        if (passwordInput.type === "password") {
+        if (registerPasswordInput.type === "password") {
 
-            passwordInput.type = "text";
-            togglePassword.innerHTML =
+            registerPasswordInput.type = "text";
+            registerTogglePassword.innerHTML =
                 '<i class="fa-regular fa-eye-slash"></i>';
 
         } else {
 
-            passwordInput.type = "password";
-            togglePassword.innerHTML =
+            registerPasswordInput.type = "password";
+            registerTogglePassword.innerHTML =
                 '<i class="fa-regular fa-eye"></i>';
 
         }
