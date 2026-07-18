@@ -15,3 +15,22 @@ amountButtons.forEach(button => {
     });
 
 });
+const copyBtn = document.getElementById("copyAccountBtn");
+
+if (copyBtn) {
+
+    copyBtn.addEventListener("click", async () => {
+
+        await navigator.clipboard.writeText("9117412352");
+
+        copyBtn.textContent = "Copied";
+
+        setTimeout(() => {
+
+            copyBtn.textContent = "Copy";
+
+        }, 2000);
+
+    });
+
+}
