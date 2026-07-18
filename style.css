@@ -70,3 +70,90 @@ body{
     font-size:20px;
     color:#111;
 }
+.hero{
+    width:100%;
+    padding:70px 20px;
+    display:flex;
+    justify-content:center;
+    background:#ffffff;
+}
+
+.hero-content{
+    max-width:720px;
+    text-align:center;
+}
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 18px;
+    border-radius:30px;
+    background:#eef8e9;
+    color:#5aa61b;
+    font-size:14px;
+    font-weight:600;
+}
+
+.hero h1{
+    margin-top:24px;
+    font-size:52px;
+    line-height:1.2;
+    color:#111111;
+    font-weight:700;
+}
+
+.hero h1 span{
+    color:#5aa61b;
+}
+
+.hero p{
+    margin:24px auto;
+    max-width:620px;
+    font-size:18px;
+    color:#666666;
+    line-height:1.8;
+}
+
+.hero-btn{
+    display:inline-block;
+    margin-top:10px;
+    background:#5aa61b;
+    color:#ffffff;
+    text-decoration:none;
+    padding:16px 34px;
+    border-radius:10px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    background:#4d9117;
+}
+
+.hero-stats{
+    margin-top:70px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.stat-card{
+    width:180px;
+    background:#ffffff;
+    border:1px solid #e7e7e7;
+    border-radius:16px;
+    padding:24px;
+}
+
+.stat-card h2{
+    color:#5aa61b;
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.stat-card span{
+    color:#666666;
+    font-size:15px;
+}
