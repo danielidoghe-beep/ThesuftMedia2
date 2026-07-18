@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Notifications | TheSuftMedia</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="sidebar-overlay"></div>
+
+<aside class="dashboard-sidebar">
+
+    <div class="sidebar-logo">
+        <h2>TheSuftMedia</h2>
+    </div>
+
+    <h4>MAIN</h4>
+
+    <a href="dashboard.html">
+        <i class="fa-solid fa-table-cells"></i>
+        Dashboard
+    </a>
+
+    <a href="wallet.html">
+        <i class="fa-solid fa-wallet"></i>
+        Wallet
+    </a>
+
+    <a href="orders.html">
+        <i class="fa-regular fa-folder-open"></i>
+        Orders
+    </a>
+
+    <a href="transactions.html">
+        <i class="fa-solid fa-receipt"></i>
+        Transactions
+    </a>
+
+    <a href="notifications.html" class="active">
+        <i class="fa-regular fa-bell"></i>
+        Notifications
+    </a>
+
+    <h4>ACCOUNT</h4>
+
+    <a href="#">
+        <i class="fa-regular fa-user"></i>
+        Profile
+    </a>
+
+    <a href="#" id="logoutBtn" class="logout-link">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Sign Out
+    </a>
+
+</aside>
+
+<div class="dashboard">
+
+<header class="dashboard-header">
+
+<button class="menu-btn" id="menuBtn">
+<i class="fa-solid fa-bars"></i>
+</button>
+
+<div class="header-right">
+
+<div class="wallet-pill" id="walletPill">
+₦0
+</div>
+
+<button class="theme-btn">
+<i class="fa-regular fa-sun"></i>
+</button>
+
+<button class="notify-btn">
+<i class="fa-regular fa-bell"></i>
+</button>
+
+<div class="profile-avatar">
+DD
+</div>
+
+</div>
+
+</header>
+
+<main class="dashboard-content">
+
+<section class="welcome-section">
+
+<h1>Notifications</h1>
+
+<p>All caught up</p>
+
+</section>
+
+<div id="notificationsList">
+
+<div class="empty-card">
+
+<div class="empty-icon">
+<i class="fa-regular fa-bell"></i>
+</div>
+
+<h3>No notifications</h3>
+
+<p>
+We'll notify you about orders,
+support replies and more.
+</p>
+
+</div>
+
+</div>
+
+</main>
+
+</div>
+
+<script type="module" src="dashboard.js"></script>
+<script type="module" src="notifications.js"></script>
+
+</body>
+</html>
