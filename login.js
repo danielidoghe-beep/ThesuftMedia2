@@ -1,3 +1,4 @@
+alert("login.js loaded");
 import {
     auth,
     signInWithEmailAndPassword
