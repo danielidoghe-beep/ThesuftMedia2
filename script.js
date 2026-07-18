@@ -76,7 +76,7 @@ menuBtn.addEventListener("click", () => {
 // DARK MODE
 // =========================
 
-const moonButton = document.querySelector(".icon-btn");
+const moonButton = document.querySelector(".theme-btn");
 
 moonButton.addEventListener("click", () => {
 
