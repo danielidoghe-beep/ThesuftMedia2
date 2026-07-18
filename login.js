@@ -1,8 +1,14 @@
-alert("login.js loaded");
 import {
     auth,
-    signInWithEmailAndPassword
+    provider,
+    signInWithEmailAndPassword,
+    signInWithRedirect,
+    getRedirectResult
 } from "./firebase.js";
+
+// =========================
+// Email & Password Login
+// =========================
 
 const loginForm = document.getElementById("loginForm");
 
@@ -19,8 +25,6 @@ if (loginForm) {
 
             await signInWithEmailAndPassword(auth, email, password);
 
-            alert("Login successful!");
-
             window.location.href = "dashboard.html";
 
         } catch (error) {
@@ -32,3 +36,47 @@ if (loginForm) {
     });
 
 }
+
+// =========================
+// Google Sign In (Redirect)
+// =========================
+
+const googleBtn = document.getElementById("googleSignIn");
+
+if (googleBtn) {
+
+    googleBtn.addEventListener("click", async () => {
+
+        try {
+
+            await signInWithRedirect(auth, provider);
+
+        } catch (error) {
+
+            alert(error.message);
+
+        }
+
+    });
+
+}
+
+// =========================
+// After Google Redirect
+// =========================
+
+getRedirectResult(auth)
+.then((result) => {
+
+    if (result && result.user) {
+
+        window.location.href = "dashboard.html";
+
+    }
+
+})
+.catch((error) => {
+
+    alert(error.message);
+
+});
