@@ -115,3 +115,64 @@ if (togglePassword && passwordInput) {
     });
 
 }
+/* ==========================
+   REGISTER PAGE
+========================== */
+
+// Show / Hide Password
+
+const togglePassword = document.querySelector(".toggle-password");
+const passwordInput = document.querySelector(".password-box input");
+
+if (togglePassword && passwordInput) {
+
+    togglePassword.addEventListener("click", () => {
+
+        if (passwordInput.type === "password") {
+
+            passwordInput.type = "text";
+            togglePassword.innerHTML =
+                '<i class="fa-regular fa-eye-slash"></i>';
+
+        } else {
+
+            passwordInput.type = "password";
+            togglePassword.innerHTML =
+                '<i class="fa-regular fa-eye"></i>';
+
+        }
+
+    });
+
+}
+
+// Create Account Button
+
+const createBtn = document.querySelector(".primary-btn");
+
+if (createBtn) {
+
+    createBtn.addEventListener("click", function (e) {
+
+        e.preventDefault();
+
+        const firstName = document.querySelectorAll(".input-group input")[0].value.trim();
+        const lastName = document.querySelectorAll(".input-group input")[1].value.trim();
+        const email = document.querySelectorAll(".input-group input")[2].value.trim();
+        const password = document.querySelector(".password-box input").value.trim();
+
+        if (!firstName || !lastName || !email || !password) {
+
+            alert("Please fill in all fields.");
+
+            return;
+
+        }
+
+        // Firebase registration will be added later.
+
+        window.location.href = "login.html";
+
+    });
+
+}
