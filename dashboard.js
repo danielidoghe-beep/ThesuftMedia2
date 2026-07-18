@@ -1,6 +1,7 @@
 import {
     auth,
     db,
+   signOut,
     onAuthStateChanged,
     doc,
     getDoc
@@ -47,3 +48,26 @@ overlay.addEventListener("click", () => {
     sidebar.classList.remove("active");
     overlay.classList.remove("active");
 });
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (logoutBtn) {
+
+    logoutBtn.addEventListener("click", async (e) => {
+
+        e.preventDefault();
+
+        try {
+
+            await signOut(auth);
+
+            window.location.href = "login.html";
+
+        } catch (error) {
+
+            alert(error.message);
+
+        }
+
+    });
+
+}
