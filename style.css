@@ -1764,3 +1764,37 @@ font-size:18px;
 .logout-link{
     color:#ef4444 !important;
 }
+.minimum-text{
+    color:#777;
+    margin:12px 0;
+}
+
+.quick-amounts{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin:20px 0;
+}
+
+.amount-btn{
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    background:#fff;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.amount-btn:hover,
+.amount-btn.active{
+    background:#4b8b00;
+    color:#fff;
+    border-color:#4b8b00;
+}
+
+.payment-note{
+    margin-top:18px;
+    color:#777;
+    text-align:center;
+}
