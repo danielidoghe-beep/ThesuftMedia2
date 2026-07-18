@@ -1506,3 +1506,179 @@ button{
 }
 
 }
+/* ===========================
+   RECENT ORDERS
+=========================== */
+
+.section-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:50px 0 20px;
+}
+
+.section-header h2,
+.coming-soon h2,
+.support-card h2{
+font-size:36px;
+font-weight:800;
+color:#111;
+}
+
+.section-header a{
+text-decoration:none;
+color:#4f8a00;
+font-size:22px;
+}
+
+.empty-card{
+background:#fff;
+border:1px solid #e6e6e6;
+border-radius:24px;
+padding:70px 20px;
+text-align:center;
+margin-bottom:50px;
+}
+
+.empty-icon{
+font-size:54px;
+color:#d0d0d0;
+margin-bottom:20px;
+}
+
+.empty-card h3{
+font-size:34px;
+margin-bottom:12px;
+}
+
+.empty-card p{
+font-size:22px;
+color:#777;
+}
+
+/* ===========================
+COMING SOON
+=========================== */
+
+.coming-card{
+background:#fff;
+border:1px solid #e6e6e6;
+border-radius:24px;
+padding:28px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:20px 0;
+}
+
+.coming-left{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.coming-icon{
+width:58px;
+height:58px;
+border-radius:16px;
+background:#f4f4f4;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:24px;
+color:#999;
+}
+
+.coming-left span{
+font-size:30px;
+color:#666;
+}
+
+.soon-badge{
+padding:8px 18px;
+border:1px solid #ddd;
+border-radius:999px;
+font-size:18px;
+color:#777;
+}
+
+/* ===========================
+SUPPORT
+=========================== */
+
+.support-card{
+background:#fff;
+border:1px solid #e6e6e6;
+border-radius:28px;
+padding:40px;
+margin:60px 0;
+}
+
+.support-card p{
+font-size:22px;
+color:#777;
+margin:20px 0 35px;
+line-height:1.7;
+}
+
+.whatsapp-btn,
+.telegram-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+height:62px;
+border-radius:18px;
+font-size:22px;
+text-decoration:none;
+margin-bottom:20px;
+}
+
+.whatsapp-btn{
+background:#4f8a00;
+color:#fff;
+}
+
+.telegram-btn{
+background:#fff;
+border:1px solid #ddd;
+color:#111;
+}
+
+.support-email{
+margin-top:30px;
+font-size:22px;
+color:#777;
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+@media(max-width:768px){
+
+.section-header h2,
+.coming-soon h2,
+.support-card h2{
+font-size:28px;
+}
+
+.empty-card h3{
+font-size:26px;
+}
+
+.empty-card p,
+.support-card p,
+.support-email{
+font-size:18px;
+}
+
+.coming-left span{
+font-size:22px;
+}
+
+.whatsapp-btn,
+.telegram-btn{
+font-size:18px;
+}
+
+}
