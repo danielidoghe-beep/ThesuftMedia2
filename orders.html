@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Orders | TheSuftMedia</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="sidebar-overlay"></div>
+
+<aside class="dashboard-sidebar">
+
+<div class="sidebar-logo">
+<h2>TheSuftMedia</h2>
+</div>
+
+<h4>MAIN</h4>
+
+<a href="dashboard.html">
+<i class="fa-solid fa-table-cells"></i>
+Dashboard
+</a>
+
+<a href="wallet.html">
+<i class="fa-solid fa-wallet"></i>
+Wallet
+</a>
+
+<a href="orders.html" class="active">
+<i class="fa-regular fa-folder-open"></i>
+Orders
+</a>
+
+<a href="#">
+<i class="fa-solid fa-receipt"></i>
+Transactions
+</a>
+
+<h4>STORE</h4>
+
+<a href="#">
+<i class="fa-solid fa-box"></i>
+Logs Store
+</a>
+
+<a href="#">
+<i class="fa-solid fa-screwdriver-wrench"></i>
+Tools Store
+</a>
+
+<a href="#">
+<i class="fa-regular fa-message"></i>
+SMS Numbers
+</a>
+
+<a href="#">
+<i class="fa-solid fa-bolt"></i>
+SME Boosting
+</a>
+
+<a href="#">
+<i class="fa-solid fa-sim-card"></i>
+E-Sim
+</a>
+
+<h4>ACCOUNT</h4>
+
+<a href="#">
+<i class="fa-regular fa-bell"></i>
+Support
+</a>
+
+<a href="#">
+<i class="fa-regular fa-user"></i>
+Profile
+</a>
+
+<a href="#" class="logout-link" id="logoutBtn">
+<i class="fa-solid fa-right-from-bracket"></i>
+Sign out
+</a>
+
+</aside>
+
+<div class="dashboard">
+
+<header class="dashboard-header">
+
+<button class="menu-btn" id="menuBtn">
+<i class="fa-solid fa-bars"></i>
+</button>
+
+<div class="header-right">
+
+<div class="wallet-pill" id="walletPill">₦0</div>
+
+<button id="themeToggle" class="theme-btn">
+<i class="fa-regular fa-sun"></i>
+</button>
+
+<button class="notify-btn">
+<i class="fa-regular fa-bell"></i>
+</button>
+
+<div class="profile-avatar">DD</div>
+
+</div>
+
+</header>
+
+<main class="dashboard-content">
+
+<section class="welcome-section">
+<h1>Orders</h1>
+<p>Your purchase history</p>
+</section>
+
+<section class="dashboard-card">
+
+<div id="ordersContainer">
+
+<div class="empty-card">
+
+<div class="empty-icon">
+<i class="fa-solid fa-box-open"></i>
+</div>
+
+<h3>No orders yet</h3>
+
+<p>Your purchases will appear here after you buy something.</p>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script type="module" src="dashboard.js"></script>
+<script type="module" src="orders.js"></script>
+
+</body>
+</html>
