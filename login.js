@@ -1,9 +1,13 @@
 import {
     auth,
+    db,
     provider,
     signInWithEmailAndPassword,
     signInWithRedirect,
-    getRedirectResult
+    getRedirectResult,
+    collection,
+    addDoc,
+    serverTimestamp
 } from "./firebase.js";
 
 // =========================
@@ -23,7 +27,22 @@ if (loginForm) {
 
         try {
 
-            await signInWithEmailAndPassword(auth, email, password);
+            const userCredential = await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
+
+            // Create notification
+            await addDoc(
+                collection(db, "users", userCredential.user.uid, "notifications"),
+                {
+                    title: "Welcome Back 👋",
+                    message: "You signed in successfully.",
+                    time: serverTimestamp(),
+                    read: false
+                }
+            );
 
             window.location.href = "dashboard.html";
 
@@ -38,7 +57,7 @@ if (loginForm) {
 }
 
 // =========================
-// Google Sign In (Redirect)
+// Google Sign In
 // =========================
 
 const googleBtn = document.getElementById("googleSignIn");
@@ -62,19 +81,31 @@ if (googleBtn) {
 }
 
 // =========================
-// After Google Redirect
+// Google Redirect Result
 // =========================
 
 getRedirectResult(auth)
-.then((result) => {
 
-    if (result && result.user) {
+.then(async (result) => {
 
-        window.location.href = "dashboard.html";
+    if (!result) return;
 
-    }
+    const user = result.user;
+
+    await addDoc(
+        collection(db, "users", user.uid, "notifications"),
+        {
+            title: "Welcome Back 👋",
+            message: "You signed in successfully with Google.",
+            time: serverTimestamp(),
+            read: false
+        }
+    );
+
+    window.location.href = "dashboard.html";
 
 })
+
 .catch((error) => {
 
     alert(error.message);
