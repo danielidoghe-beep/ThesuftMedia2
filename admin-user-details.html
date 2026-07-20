@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>User Details | TheSuftMedia Admin</title>
+
+<link rel="stylesheet" href="admin.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+<aside class="admin-sidebar">
+
+<div class="admin-logo">
+
+<h2>TheSuftMedia</h2>
+
+<p>Admin Panel</p>
+
+</div>
+
+<nav>
+
+<a href="admin-dashboard.html">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</a>
+
+<a href="admin-users.html" class="active">
+<i class="fa-solid fa-users"></i>
+Users
+</a>
+
+<a href="#" id="logoutBtn">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</a>
+
+</nav>
+
+</aside>
+
+<main class="admin-main">
+
+<h1>User Details</h1>
+
+<div class="stat-card">
+
+<h2 id="userName">Loading...</h2>
+
+<p id="userEmail"></p>
+
+<p><strong>Wallet:</strong> ₦<span id="walletBalance">0</span></p>
+
+<p><strong>Status:</strong> <span id="userStatus">Active</span></p>
+
+</div>
+
+<div class="stats-grid">
+
+<div class="stat-card">
+
+<h3>Fund Wallet</h3>
+
+<input
+type="number"
+id="creditAmount"
+placeholder="Amount">
+
+<button id="creditBtn" class="admin-btn">
+Credit Wallet
+</button>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Debit Wallet</h3>
+
+<input
+type="number"
+id="debitAmount"
+placeholder="Amount">
+
+<button id="debitBtn" class="admin-btn danger">
+Debit Wallet
+</button>
+
+</div>
+
+</div>
+
+<div class="stats-grid">
+
+<div class="stat-card">
+
+<h3>Account Actions</h3>
+
+<button id="banBtn" class="admin-btn warning">
+Ban User
+</button>
+
+<br><br>
+
+<button id="deleteBtn" class="admin-btn danger">
+Delete User
+</button>
+
+</div>
+
+<div class="stat-card">
+
+<h3>User Statistics</h3>
+
+<p>Total Orders:
+<strong id="totalOrders">0</strong></p>
+
+<p>Total Transactions:
+<strong id="totalTransactions">0</strong></p>
+
+<p>Date Joined:
+<strong id="joinedDate">--</strong></p>
+
+</div>
+
+</div>
+
+<h2 style="margin-top:40px;">Recent Orders</h2>
+
+<div class="table-card">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Product</th>
+
+<th>Amount</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="ordersTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</main>
+
+</div>
+
+<script type="module" src="admin-user-details.js"></script>
+
+</body>
+
+</html>
