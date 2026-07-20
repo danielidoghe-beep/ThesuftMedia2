@@ -2142,3 +2142,96 @@ font-size:18px;
         padding:18px 20px 28px;
     }
 }
+/* ===========================
+   UPDATES PAGE
+=========================== */
+
+.updates-content{
+    padding:24px;
+}
+
+.updates-header h1{
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:6px;
+}
+
+.updates-header p{
+    color:#6b7280;
+    margin-bottom:24px;
+}
+
+.updates-search{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:14px 16px;
+    margin-bottom:20px;
+}
+
+.updates-search input{
+    border:none;
+    outline:none;
+    width:100%;
+    background:transparent;
+    font-size:15px;
+}
+
+.updates-counter{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.update-tabs{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.tab-btn{
+    border:none;
+    background:#f3f4f6;
+    padding:12px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.tab-btn.active{
+    background:#16a34a;
+    color:#fff;
+}
+
+.tab-btn span{
+    margin-left:8px;
+    background:rgba(255,255,255,.25);
+    padding:2px 8px;
+    border-radius:999px;
+}
+
+.empty-updates{
+    text-align:center;
+    padding:70px 20px;
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:16px;
+}
+
+.empty-updates i{
+    font-size:55px;
+    color:#9ca3af;
+    margin-bottom:16px;
+}
+
+.empty-updates h3{
+    margin-bottom:10px;
+}
+
+.empty-updates p{
+    color:#6b7280;
+}
