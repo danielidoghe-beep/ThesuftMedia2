@@ -2603,268 +2603,128 @@ font-size:18px;
 =========================== */
 
 .dashboard-content{
-    max-width:550px;
+    max-width:430px;
     margin:0 auto;
-    padding:28px 18px 40px;
-}
-
-.welcome-section{
-    margin-bottom:28px;
+    padding:24px 20px 40px;
+    background:#fff;
 }
 
 .welcome-section h1{
-    font-size:42px;
+    font-size:22px;
     font-weight:800;
     color:#111;
-    line-height:1.15;
-    margin-bottom:8px;
+    margin-bottom:6px;
 }
 
 .welcome-section p{
     color:#777;
-    font-size:18px;
+    font-size:15px;
+    margin-bottom:28px;
 }
 
-.dashboard-grid{
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-    margin-bottom:35px;
-}
-
-.dashboard-box{
-    display:block;
+.dashboard-card{
     background:#fff;
     border:1px solid #ececec;
-    border-radius:24px;
-    padding:28px;
-    text-decoration:none;
-    color:#111;
-    transition:.25s;
-}
-
-.dashboard-box:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-.dashboard-box p{
-    color:#777;
-    font-size:18px;
+    border-radius:18px;
+    padding:24px;
     margin-bottom:18px;
+    box-shadow:none;
 }
 
-.dashboard-box h2{
-    font-size:48px;
-    font-weight:800;
+.card-title{
+    font-size:15px;
+    color:#888;
     margin-bottom:14px;
 }
 
-.dashboard-box span{
-    color:#777;
-    font-size:17px;
+.dashboard-card h2{
+    font-size:24px;
+    font-weight:800;
+    color:#111;
+    margin-bottom:14px;
 }
 
-.dashboard-box small{
-    color:#777;
-    font-size:16px;
+.wallet-amount{
+    color:#4D8B00;
+}
+
+.dashboard-card a{
+    color:#666;
+    text-decoration:none;
+    font-size:15px;
 }
 
 .quick-actions{
-    margin-top:10px;
+    margin-top:28px;
 }
 
 .quick-actions h2,
 .recent-orders h2,
 .coming-soon h2{
-    font-size:34px;
+    font-size:28px;
     font-weight:800;
-    margin-bottom:20px;
+    margin-bottom:18px;
 }
 
 .action-card{
     display:flex;
     align-items:center;
-    gap:18px;
+    gap:16px;
     background:#fff;
     border:1px solid #ececec;
-    border-radius:24px;
+    border-radius:18px;
     padding:22px;
-    margin-bottom:18px;
+    margin-bottom:16px;
     text-decoration:none;
     color:#111;
-    transition:.25s;
+    transition:.2s;
 }
 
 .action-card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transform:translateY(-2px);
 }
 
 .action-icon{
-    width:62px;
-    height:62px;
-    border-radius:18px;
+    width:52px;
+    height:52px;
+    border-radius:14px;
     display:flex;
     justify-content:center;
     align-items:center;
-    font-size:26px;
+    font-size:22px;
 }
 
 .action-card h3{
-    font-size:24px;
-    margin-bottom:6px;
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:5px;
 }
 
 .action-card p{
     color:#777;
-    font-size:17px;
-}
-/* ===========================
-   RECENT ORDERS
-=========================== */
-
-.section-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:18px;
-}
-
-.section-header a{
-    color:#4d8d08;
-    text-decoration:none;
-    font-weight:600;
-    font-size:16px;
+    font-size:15px;
 }
 
 .empty-card{
     background:#fff;
     border:1px solid #ececec;
-    border-radius:24px;
-    padding:55px 25px;
+    border-radius:18px;
+    padding:60px 20px;
     text-align:center;
-    margin-bottom:35px;
 }
-
-.empty-icon{
-    font-size:56px;
-    color:#d4d4d4;
-    margin-bottom:20px;
-}
-
-.empty-card h3{
-    font-size:28px;
-    margin-bottom:10px;
-}
-
-.empty-card p{
-    color:#777;
-    font-size:17px;
-}
-
-/* ===========================
-   COMING SOON
-=========================== */
 
 .coming-card{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
     background:#fff;
     border:1px solid #ececec;
-    border-radius:24px;
-    padding:22px;
-    margin-bottom:18px;
-    text-decoration:none;
-    color:#111;
-}
-
-.coming-left{
-    display:flex;
-    align-items:center;
-    gap:18px;
-}
-
-.coming-icon{
-    width:62px;
-    height:62px;
     border-radius:18px;
-    background:#f5f5f5;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#888;
-    font-size:24px;
+    padding:20px;
+    margin-bottom:16px;
 }
-
-.coming-left span{
-    font-size:21px;
-    font-weight:500;
-}
-
-.soon-badge{
-    border:1px solid #ddd;
-    border-radius:30px;
-    padding:8px 18px;
-    color:#777;
-    font-size:15px;
-}
-
-/* ===========================
-   SUPPORT CARD
-=========================== */
 
 .support-card{
     background:#fff;
     border:1px solid #ececec;
-    border-radius:24px;
-    padding:28px;
-    margin-top:30px;
-}
-
-.support-card h2{
-    font-size:32px;
-    margin-bottom:12px;
-}
-
-.support-card p{
-    color:#777;
-    line-height:1.6;
-    margin-bottom:24px;
-}
-
-.whatsapp-btn,
-.telegram-btn{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
-    text-decoration:none;
-    border-radius:14px;
-    padding:16px;
-    font-size:18px;
-    font-weight:600;
-    margin-bottom:15px;
-}
-
-.whatsapp-btn{
-    background:#4d8d08;
-    color:#fff;
-}
-
-.telegram-btn{
-    border:1px solid #ddd;
-    color:#111;
-    background:#fff;
-}
-
-.support-email{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    color:#777;
-    margin-top:10px;
-    font-size:17px;
+    border-radius:18px;
+    padding:26px;
+    margin-top:18px;
 }
