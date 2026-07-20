@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Users | TheSuftMedia Admin</title>
+
+<link rel="stylesheet" href="admin.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+<!-- Sidebar -->
+
+<aside class="admin-sidebar">
+
+<div class="admin-logo">
+
+<h2>TheSuftMedia</h2>
+
+<p>Admin Panel</p>
+
+</div>
+
+<nav>
+
+<a href="admin-dashboard.html">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</a>
+
+<a href="#" class="active">
+<i class="fa-solid fa-users"></i>
+Users
+</a>
+
+<a href="admin-products.html">
+<i class="fa-solid fa-box"></i>
+Products
+</a>
+
+<a href="admin-orders.html">
+<i class="fa-solid fa-cart-shopping"></i>
+Orders
+</a>
+
+<a href="admin-wallet.html">
+<i class="fa-solid fa-wallet"></i>
+Wallet
+</a>
+
+<a href="#" id="logoutBtn">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</a>
+
+</nav>
+
+</aside>
+
+<!-- Main -->
+
+<main class="admin-main">
+
+<header class="admin-header">
+
+<h1>Users</h1>
+
+<input
+type="search"
+id="searchUser"
+placeholder="Search users...">
+
+</header>
+
+<div class="table-card">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Wallet</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="usersTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</main>
+
+</div>
+
+<script type="module" src="admin-users.js"></script>
+
+</body>
+
+</html>
