@@ -2850,3 +2850,94 @@ font-size:18px;
     font-weight:700;
     cursor:pointer;
 }
+/* ===== New Profile Design ===== */
+
+.profile-header-new{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin:25px 0 35px;
+}
+
+.profile-initials{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#4d8d08;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    font-weight:700;
+    flex-shrink:0;
+}
+
+.profile-details h1{
+    margin:8px 0;
+    font-size:52px;
+    font-weight:800;
+    line-height:1.1;
+    color:#111;
+}
+
+.profile-details p{
+    color:#6b7280;
+    font-size:17px;
+    margin:0;
+}
+
+.profile-short{
+    font-size:18px;
+    color:#444;
+    font-weight:600;
+}
+
+.profile-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:30px;
+}
+
+.profile-grid .full-width{
+    grid-column:1 / -1;
+}
+
+.profile-grid .form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.profile-grid label{
+    margin-bottom:8px;
+    font-size:15px;
+    font-weight:600;
+}
+
+.profile-grid input{
+    height:55px;
+    border:1px solid #e5e7eb;
+    border-radius:14px;
+    padding:0 18px;
+    font-size:16px;
+    outline:none;
+}
+
+.profile-grid input:focus{
+    border-color:#4d8d08;
+}
+
+.save-btn{
+    grid-column:1 / -1;
+    width:100%;
+    height:60px;
+    margin-top:10px;
+    border:none;
+    border-radius:16px;
+    background:#4d8d08;
+    color:#fff;
+    font-size:20px;
+    font-weight:700;
+    cursor:pointer;
+}
