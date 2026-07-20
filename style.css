@@ -1866,3 +1866,115 @@ font-size:18px;
 
     display:none;
 }
+/* ===========================
+   LOGS STORE
+=========================== */
+
+.logs-content{
+    padding:30px;
+}
+
+.logs-hero h1{
+    font-size:34px;
+    font-weight:700;
+    color:#111827;
+    margin-bottom:8px;
+}
+
+.logs-hero p{
+    color:#6b7280;
+    font-size:16px;
+    margin-bottom:35px;
+}
+
+.listing-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.listing-top h2{
+    font-size:22px;
+    color:#111827;
+    font-weight:700;
+}
+
+#listingCount{
+    display:block;
+    color:#9ca3af;
+    font-size:14px;
+    margin-top:5px;
+}
+
+.filter-btn{
+    width:45px;
+    height:45px;
+    border:none;
+    background:#fff;
+    border-radius:12px;
+    cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    font-size:17px;
+}
+
+.listing-description{
+    color:#6b7280;
+    margin-bottom:25px;
+    font-size:15px;
+}
+
+.logs-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+    gap:22px;
+}
+
+.log-card{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    transition:.25s;
+}
+
+.log-card:hover{
+    transform:translateY(-4px);
+}
+
+.log-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    display:block;
+}
+
+.log-info{
+    padding:18px;
+}
+
+.log-info h3{
+    font-size:18px;
+    font-weight:700;
+    color:#111827;
+    margin-bottom:8px;
+}
+
+.log-info p{
+    color:#6b7280;
+    font-size:14px;
+    margin-bottom:18px;
+    line-height:1.5;
+}
+
+.out-stock{
+    width:100%;
+    height:45px;
+    border:none;
+    border-radius:12px;
+    background:#e5e7eb;
+    color:#6b7280;
+    font-size:15px;
+    font-weight:600;
+    cursor:not-allowed;
+}
