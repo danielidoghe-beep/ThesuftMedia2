@@ -2598,3 +2598,273 @@ font-size:18px;
     color:#6b7280;
     line-height:1.6;
 }
+/* ===========================
+   NEW DASHBOARD DESIGN
+=========================== */
+
+.dashboard-content{
+    max-width:550px;
+    margin:0 auto;
+    padding:28px 18px 40px;
+}
+
+.welcome-section{
+    margin-bottom:28px;
+}
+
+.welcome-section h1{
+    font-size:42px;
+    font-weight:800;
+    color:#111;
+    line-height:1.15;
+    margin-bottom:8px;
+}
+
+.welcome-section p{
+    color:#777;
+    font-size:18px;
+}
+
+.dashboard-grid{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-bottom:35px;
+}
+
+.dashboard-box{
+    display:block;
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:24px;
+    padding:28px;
+    text-decoration:none;
+    color:#111;
+    transition:.25s;
+}
+
+.dashboard-box:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.dashboard-box p{
+    color:#777;
+    font-size:18px;
+    margin-bottom:18px;
+}
+
+.dashboard-box h2{
+    font-size:48px;
+    font-weight:800;
+    margin-bottom:14px;
+}
+
+.dashboard-box span{
+    color:#777;
+    font-size:17px;
+}
+
+.dashboard-box small{
+    color:#777;
+    font-size:16px;
+}
+
+.quick-actions{
+    margin-top:10px;
+}
+
+.quick-actions h2,
+.recent-orders h2,
+.coming-soon h2{
+    font-size:34px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.action-card{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:24px;
+    padding:22px;
+    margin-bottom:18px;
+    text-decoration:none;
+    color:#111;
+    transition:.25s;
+}
+
+.action-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.action-icon{
+    width:62px;
+    height:62px;
+    border-radius:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:26px;
+}
+
+.action-card h3{
+    font-size:24px;
+    margin-bottom:6px;
+}
+
+.action-card p{
+    color:#777;
+    font-size:17px;
+}
+/* ===========================
+   RECENT ORDERS
+=========================== */
+
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.section-header a{
+    color:#4d8d08;
+    text-decoration:none;
+    font-weight:600;
+    font-size:16px;
+}
+
+.empty-card{
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:24px;
+    padding:55px 25px;
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.empty-icon{
+    font-size:56px;
+    color:#d4d4d4;
+    margin-bottom:20px;
+}
+
+.empty-card h3{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.empty-card p{
+    color:#777;
+    font-size:17px;
+}
+
+/* ===========================
+   COMING SOON
+=========================== */
+
+.coming-card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:24px;
+    padding:22px;
+    margin-bottom:18px;
+    text-decoration:none;
+    color:#111;
+}
+
+.coming-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.coming-icon{
+    width:62px;
+    height:62px;
+    border-radius:18px;
+    background:#f5f5f5;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#888;
+    font-size:24px;
+}
+
+.coming-left span{
+    font-size:21px;
+    font-weight:500;
+}
+
+.soon-badge{
+    border:1px solid #ddd;
+    border-radius:30px;
+    padding:8px 18px;
+    color:#777;
+    font-size:15px;
+}
+
+/* ===========================
+   SUPPORT CARD
+=========================== */
+
+.support-card{
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:24px;
+    padding:28px;
+    margin-top:30px;
+}
+
+.support-card h2{
+    font-size:32px;
+    margin-bottom:12px;
+}
+
+.support-card p{
+    color:#777;
+    line-height:1.6;
+    margin-bottom:24px;
+}
+
+.whatsapp-btn,
+.telegram-btn{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    border-radius:14px;
+    padding:16px;
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.whatsapp-btn{
+    background:#4d8d08;
+    color:#fff;
+}
+
+.telegram-btn{
+    border:1px solid #ddd;
+    color:#111;
+    background:#fff;
+}
+
+.support-email{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#777;
+    margin-top:10px;
+    font-size:17px;
+}
