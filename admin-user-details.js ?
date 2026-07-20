@@ -1,0 +1,188 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+
+import {
+    getFirestore,
+    doc,
+    getDoc,
+    updateDoc,
+    deleteDoc,
+    increment
+} from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+import {
+    getAuth,
+    onAuthStateChanged,
+    signOut
+} from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+
+// =======================
+// Firebase Config
+// =======================
+
+const firebaseConfig = {
+
+    apiKey: "YOUR_API_KEY",
+
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+
+    projectId: "YOUR_PROJECT_ID",
+
+    storageBucket: "YOUR_PROJECT.appspot.com",
+
+    messagingSenderId: "YOUR_SENDER_ID",
+
+    appId: "YOUR_APP_ID"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+const auth = getAuth(app);
+
+// =======================
+// Protect Page
+// =======================
+
+onAuthStateChanged(auth,(user)=>{
+
+    if(!user){
+
+        location.href="admin-login.html";
+
+    }
+
+});
+
+// =======================
+// Get User ID
+// =======================
+
+const params = new URLSearchParams(window.location.search);
+
+const userId = params.get("id");
+
+// =======================
+// Load User
+// =======================
+
+async function loadUser(){
+
+    if(!userId) return;
+
+    const snap = await getDoc(doc(db,"users",userId));
+
+    if(!snap.exists()) return;
+
+    const user = snap.data();
+
+    document.getElementById("userName").textContent =
+        `${user.firstName || ""} ${user.lastName || ""}`;
+
+    document.getElementById("userEmail").textContent =
+        user.email;
+
+    document.getElementById("walletBalance").textContent =
+        user.wallet || 0;
+
+    document.getElementById("userStatus").textContent =
+        user.banned ? "Banned" : "Active";
+
+}
+
+loadUser();
+
+// =======================
+// Credit Wallet
+// =======================
+
+document.getElementById("creditBtn").onclick = async ()=>{
+
+    const amount = Number(document.getElementById("creditAmount").value);
+
+    if(amount <= 0) return;
+
+    await updateDoc(doc(db,"users",userId),{
+
+        wallet: increment(amount)
+
+    });
+
+    alert("Wallet Credited");
+
+    loadUser();
+
+};
+
+// =======================
+// Debit Wallet
+// =======================
+
+document.getElementById("debitBtn").onclick = async ()=>{
+
+    const amount = Number(document.getElementById("debitAmount").value);
+
+    if(amount <= 0) return;
+
+    await updateDoc(doc(db,"users",userId),{
+
+        wallet: increment(-amount)
+
+    });
+
+    alert("Wallet Debited");
+
+    loadUser();
+
+};
+
+// =======================
+// Ban / Unban User
+// =======================
+
+document.getElementById("banBtn").onclick = async ()=>{
+
+    const snap = await getDoc(doc(db,"users",userId));
+
+    const user = snap.data();
+
+    await updateDoc(doc(db,"users",userId),{
+
+        banned: !user.banned
+
+    });
+
+    alert(user.banned ? "User Unbanned" : "User Banned");
+
+    loadUser();
+
+};
+
+// =======================
+// Delete User
+// =======================
+
+document.getElementById("deleteBtn").onclick = async ()=>{
+
+    if(!confirm("Delete this user?")) return;
+
+    await deleteDoc(doc(db,"users",userId));
+
+    alert("User Deleted");
+
+    location.href="admin-users.html";
+
+};
+
+// =======================
+// Logout
+// =======================
+
+document.getElementById("logoutBtn").onclick = async ()=>{
+
+    await signOut(auth);
+
+    location.href="admin-login.html";
+
+};
