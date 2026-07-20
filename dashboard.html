@@ -139,124 +139,148 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <main class="dashboard-content">
 
-<section class="welcome-section">
+<section class="dashboard-hero">
 
-<h1>
-Welcome back,
-<span id="displayName">User</span>
-</h1>
+    <div class="hero-text">
 
-<p>
-Here's what's going on with your account
-</p>
+        <h1>
+            Welcome back,
+            <span id="displayName">User</span> 👋
+        </h1>
 
-</section>
+        <p>
+            Manage your wallet, orders and digital products from one place.
+        </p>
 
-<!-- Wallet Card -->
-
-<section class="dashboard-card">
-
-<p class="card-title">
-Wallet balance
-</p>
-
-<h2 class="wallet-amount" id="walletBalance">
-₦0
-</h2>
-
-<a href="#">
-View history →
-</a>
+    </div>
 
 </section>
 
-<!-- Purchases -->
 
-<section class="dashboard-card">
+<div class="dashboard-stats">
 
-<p class="card-title">
-Total purchases
-</p>
+    <div class="modern-card">
 
-<h2>
-0
-</h2>
+        <div class="modern-icon green">
+            <i class="fa-solid fa-wallet"></i>
+        </div>
 
-<a href="#">
-View orders →
-</a>
+        <div>
 
-</section>
+            <span>Wallet Balance</span>
 
-<!-- Inventory -->
+            <h2 id="walletBalance">
+                ₦0
+            </h2>
 
-<section class="dashboard-card">
+        </div>
 
-<p class="card-title">
-Available inventory
-</p>
+    </div>
 
-<h2>
-331
-</h2>
 
-<p>
-142 Logs • 189 Tools
-</p>
+    <div class="modern-card">
 
-</section>
+        <div class="modern-icon blue">
+            <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+
+        <div>
+
+            <span>Total Purchases</span>
+
+            <h2 id="purchaseCount">
+                0
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="modern-card">
+
+        <div class="modern-icon orange">
+            <i class="fa-solid fa-box"></i>
+        </div>
+
+        <div>
+
+            <span>Inventory</span>
+
+            <h2 id="inventoryCount">
+                331
+            </h2>
+
+            <small id="inventoryText">
+                142 Logs • 189 Tools
+            </small>
+
+        </div>
+
+    </div>
+
+</div>
 
 <section class="quick-actions">
 
-<h2>Quick actions</h2>
+    <div class="section-title">
+        <h2>Quick Actions</h2>
+        <a href="logs.html">View all</a>
+    </div>
 
-<a href="logs.html" class="action-card">
+    <div class="action-grid">
 
-<div class="action-icon blue">
-<i class="fa-solid fa-box"></i>
-</div>
+        <a href="logs.html" class="modern-action-card">
 
-<h3>Buy Logs</h3>
+            <div class="action-circle green">
+                <i class="fa-solid fa-box"></i>
+            </div>
 
-<p>Social media accounts, VPNs, proxies, etc.</p>
+            <h3>Logs Store</h3>
 
-</a>
+            <p>Buy social media accounts, VPNs and more.</p>
 
-<div class="action-card">
+        </a>
 
-<div class="action-icon purple">
-<i class="fa-solid fa-screwdriver-wrench"></i>
-</div>
+        <a href="updates.html" class="modern-action-card">
 
-<h3>Buy Tools</h3>
+            <div class="action-circle purple">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
 
-<p>Updates & pictures</p>
+            <h3>Tools Store</h3>
 
-</div>
+            <p>Latest updates, premium tools and pictures.</p>
 
-<a href="updates.html" class="action-card">
+        </a>
 
-<div class="action-icon green">
-<i class="fa-solid fa-wallet"></i>
-</a>
+        <a href="wallet.html" class="modern-action-card">
 
-<h3>Top Up Wallet</h3>
+            <div class="action-circle blue">
+                <i class="fa-solid fa-wallet"></i>
+            </div>
 
-<p>Add funds to your balance</p>
+            <h3>Fund Wallet</h3>
 
-</div>
+            <p>Add money securely to your wallet.</p>
 
-<div class="action-card">
+        </a>
 
-<div class="action-icon orange">
-<i class="fa-solid fa-headset"></i>
-</div>
+        <a href="support.html" class="modern-action-card">
 
-<h3>Get Support</h3>
+            <div class="action-circle orange">
+                <i class="fa-solid fa-headset"></i>
+            </div>
 
-<p>Open a support ticket</p>
+            <h3>Support</h3>
 
-</div>
+            <p>Get help from our support team.</p>
+
+        </a>
+
+    </div>
+
+</section>
 
 <section class="recent-orders">
 
