@@ -2850,94 +2850,40 @@ font-size:18px;
     font-weight:700;
     cursor:pointer;
 }
-/* ===== New Profile Design ===== */
-
-.profile-header-new{
-    display:flex;
-    align-items:center;
-    gap:18px;
-    margin:25px 0 35px;
-}
-
-.profile-initials{
-    width:70px;
-    height:70px;
-    border-radius:50%;
-    background:#4d8d08;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-    font-weight:700;
-    flex-shrink:0;
-}
-
-.profile-details h1{
-    margin:8px 0;
-    font-size:52px;
-    font-weight:800;
-    line-height:1.1;
-    color:#111;
-}
-
-.profile-details p{
-    color:#6b7280;
-    font-size:17px;
-    margin:0;
-}
-
-.profile-short{
-    font-size:18px;
-    color:#444;
-    font-weight:600;
-}
-
-.profile-grid{
+.dashboard-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
-    margin-top:30px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-bottom:35px;
 }
-
-.profile-grid .full-width{
-    grid-column:1 / -1;
-}
-
-.profile-grid .form-group{
-    display:flex;
-    flex-direction:column;
-}
-
-.profile-grid label{
-    margin-bottom:8px;
-    font-size:15px;
-    font-weight:600;
-}
-
-.profile-grid input{
-    height:55px;
+.dashboard-box{
+    background:#fff;
     border:1px solid #e5e7eb;
-    border-radius:14px;
-    padding:0 18px;
-    font-size:16px;
-    outline:none;
+    border-radius:18px;
+    padding:24px;
+    transition:.3s;
 }
 
-.profile-grid input:focus{
-    border-color:#4d8d08;
+.dashboard-box:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
 }
 
-.save-btn{
-    grid-column:1 / -1;
-    width:100%;
-    height:60px;
-    margin-top:10px;
-    border:none;
-    border-radius:16px;
-    background:#4d8d08;
-    color:#fff;
-    font-size:20px;
+.dashboard-box p{
+    color:#777;
+    font-size:15px;
+}
+
+.dashboard-box h2{
+    margin:10px 0;
+    font-size:30px;
     font-weight:700;
-    cursor:pointer;
+}
+
+.dashboard-box span{
+    color:#4d8d08;
+}
+
+.dashboard-box small{
+    color:#777;
 }
