@@ -154,11 +154,11 @@ DD
 
     </div>
 
-    <button class="filter-btn">
+    <button class="filter-btn" id="categoryFilterBtn">
 
-        <i class="fa-solid fa-sliders"></i>
+    <i class="fa-solid fa-sliders"></i>
 
-    </button>
+</button>
 
 </section>
 
@@ -514,7 +514,90 @@ DD
 </main>
 
 </div>
+<!-- Category Sidebar -->
+<div class="category-overlay" id="categoryOverlay"></div>
 
+<aside class="category-sidebar" id="categorySidebar">
+
+    <div class="category-sidebar-header">
+        <div>
+            <h2>Browse categories</h2>
+            <p>Switch between listings and jump straight into the category you want.</p>
+        </div>
+
+        <button id="closeCategorySidebar">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <div class="category-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+            type="text"
+            placeholder="Search categories..."
+            id="categorySearch">
+    </div>
+
+    <div class="category-list" id="categoryList">
+
+        <a href="#all" class="active">
+            <span>All Listings</span>
+            <span class="count">151</span>
+        </a>
+
+        <a href="#tiktok">
+            <span>TikTok</span>
+            <span class="count">0</span>
+        </a>
+
+        <a href="#instagram">
+            <span>Instagram</span>
+            <span class="count">0</span>
+        </a>
+
+        <a href="#facebook">
+            <span>Facebook</span>
+            <span class="count">0</span>
+        </a>
+
+        <a href="#gmail">
+            <span>Gmail</span>
+            <span class="count">0</span>
+        </a>
+
+        <a href="#icloud">
+            <span>iCloud</span>
+            <span class="count">0</span>
+        </a>
+
+        <a href="#discord">
+            <span>Discord</span>
+            <span class="count">0</span>
+        </a>
+
+        <a href="#netflix">
+            <span>Netflix</span>
+            <span class="count">0</span>
+        </a>
+
+        <a href="#nordvpn">
+            <span>NordVPN</span>
+            <span class="count">0</span>
+        </a>
+
+        <a href="#expressvpn">
+            <span>ExpressVPN</span>
+            <span class="count">0</span>
+        </a>
+
+        <a href="#hmavpn">
+            <span>HMA VPN</span>
+            <span class="count">0</span>
+        </a>
+
+    </div>
+
+</aside>
 <script type="module" src="dashboard.js"></script>
 <script type="module" src="logs.js"></script>
 <script type="module" src="notification-badge.js"></script>
