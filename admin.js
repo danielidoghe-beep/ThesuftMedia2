@@ -1,7 +1,3 @@
-// =============================
-// Firebase
-// =============================
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
 
 import {
@@ -19,6 +15,11 @@ import {
     limit
 } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
+// ==========================
+// Firebase Config
+// Replace with YOUR config
+// ==========================
+
 const firebaseConfig = {
 
     apiKey: "YOUR_API_KEY",
@@ -29,9 +30,9 @@ const firebaseConfig = {
 
     storageBucket: "YOUR_PROJECT.appspot.com",
 
-    messagingSenderId: "XXXXXXXX",
+    messagingSenderId: "YOUR_SENDER_ID",
 
-    appId: "XXXXXXXX"
+    appId: "YOUR_APP_ID"
 
 };
 
@@ -41,15 +42,15 @@ const auth = getAuth(app);
 
 const db = getFirestore(app);
 
-// =============================
-// Check Login
-// =============================
+// ==========================
+// Protect Admin Page
+// ==========================
 
-onAuthStateChanged(auth, async (user)=>{
+onAuthStateChanged(auth,(user)=>{
 
     if(!user){
 
-        location.href="admin-login.html";
+        window.location.href="admin-login.html";
 
         return;
 
@@ -59,42 +60,47 @@ onAuthStateChanged(auth, async (user)=>{
 
 });
 
-// =============================
-// Dashboard
-// =============================
+// ==========================
+// Dashboard Statistics
+// ==========================
 
 async function loadDashboard(){
 
     // USERS
 
-    const usersSnapshot = await getDocs(collection(db,"users"));
+    const users = await getDocs(collection(db,"users"));
 
-    document.getElementById("totalUsers").textContent =
-    usersSnapshot.size;
+    document.getElementById("totalUsers").textContent = users.size;
 
     // ORDERS
 
-    const ordersSnapshot = await getDocs(collection(db,"orders"));
+    const orders = await getDocs(collection(db,"orders"));
 
-    document.getElementById("totalOrders").textContent =
-    ordersSnapshot.size;
+    document.getElementById("totalOrders").textContent = orders.size;
 
     // PRODUCTS
 
-    const productsSnapshot = await getDocs(collection(db,"products"));
+    const products = await getDocs(collection(db,"products"));
 
-    document.getElementById("totalProducts").textContent =
-    productsSnapshot.size;
+    document.getElementById("totalProducts").textContent = products.size;
+
+    // Revenue Placeholder
+
+    document.getElementById("totalRevenue").textContent="₦0";
 
     loadRecentUsers();
 
 }
 
-// =============================
+// ==========================
 // Recent Users
-// =============================
+// ==========================
 
 async function loadRecentUsers(){
+
+    const tbody=document.getElementById("recentUsers");
+
+    tbody.innerHTML="";
 
     const q=query(
 
@@ -108,10 +114,6 @@ async function loadRecentUsers(){
 
     const snapshot=await getDocs(q);
 
-    const tbody=document.getElementById("recentUsers");
-
-    tbody.innerHTML="";
-
     snapshot.forEach(doc=>{
 
         const user=doc.data();
@@ -120,11 +122,11 @@ async function loadRecentUsers(){
 
         <tr>
 
-            <td>${user.firstName} ${user.lastName}</td>
+            <td>${user.firstName || ""} ${user.lastName || ""}</td>
 
             <td>${user.email}</td>
 
-            <td>${user.wallet || 0}</td>
+            <td>₦${user.wallet || 0}</td>
 
         </tr>
 
@@ -134,14 +136,18 @@ async function loadRecentUsers(){
 
 }
 
-// =============================
+// ==========================
 // Logout
-// =============================
+// ==========================
 
-document.getElementById("logoutBtn").onclick=async()=>{
+const logoutBtn=document.getElementById("logoutBtn");
+
+logoutBtn.addEventListener("click",async(e)=>{
+
+    e.preventDefault();
 
     await signOut(auth);
 
-    location.href="admin-login.html";
+    window.location.href="admin-login.html";
 
-};
+});
