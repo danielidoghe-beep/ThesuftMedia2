@@ -95,11 +95,11 @@ async function loadUsers(){
 
         <td>
 
-        <button class="action-btn">
-
-        View
-
-        </button>
+        <button
+class="action-btn"
+onclick="location.href='admin-user-details.html?id=${doc.id}'">
+View
+</button>
 
         </td>
 
