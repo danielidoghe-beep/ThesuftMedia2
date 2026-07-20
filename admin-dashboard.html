@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | TheSuftMedia</title>
+
+<link rel="stylesheet" href="admin.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+<!-- Sidebar -->
+
+<aside class="admin-sidebar">
+
+<div class="admin-logo">
+<h2>TheSuftMedia</h2>
+<p>Admin Panel</p>
+</div>
+
+<nav>
+
+<a href="#" class="active">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</a>
+
+<a href="admin-users.html">
+<i class="fa-solid fa-users"></i>
+Users
+</a>
+
+<a href="admin-products.html">
+<i class="fa-solid fa-box"></i>
+Products
+</a>
+
+<a href="admin-orders.html">
+<i class="fa-solid fa-cart-shopping"></i>
+Orders
+</a>
+
+<a href="admin-wallet.html">
+<i class="fa-solid fa-wallet"></i>
+Wallet
+</a>
+
+<a href="admin-notifications.html">
+<i class="fa-solid fa-bell"></i>
+Notifications
+</a>
+
+<a href="admin-settings.html">
+<i class="fa-solid fa-gear"></i>
+Settings
+</a>
+
+<a href="#" id="logoutBtn">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</a>
+
+</nav>
+
+</aside>
+
+<!-- Main -->
+
+<main class="admin-main">
+
+<header class="admin-header">
+
+<h1>Dashboard</h1>
+
+<div class="admin-profile">
+
+<i class="fa-solid fa-user-shield"></i>
+
+<span>Administrator</span>
+
+</div>
+
+</header>
+
+<!-- Statistics -->
+
+<section class="stats-grid">
+
+<div class="stat-card">
+
+<p>Total Users</p>
+
+<h2 id="totalUsers">0</h2>
+
+</div>
+
+<div class="stat-card">
+
+<p>Total Orders</p>
+
+<h2 id="totalOrders">0</h2>
+
+</div>
+
+<div class="stat-card">
+
+<p>Total Products</p>
+
+<h2 id="totalProducts">0</h2>
+
+</div>
+
+<div class="stat-card">
+
+<p>Total Revenue</p>
+
+<h2 id="totalRevenue">₦0</h2>
+
+</div>
+
+</section>
+
+<!-- Recent Users -->
+
+<section class="table-card">
+
+<h2>Recent Users</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Wallet</th>
+
+</tr>
+
+</thead>
+
+<tbody id="recentUsers">
+
+</tbody>
+
+</table>
+
+</section>
+
+</main>
+
+</div>
+
+<script type="module" src="admin.js"></script>
+
+</body>
+</html>
