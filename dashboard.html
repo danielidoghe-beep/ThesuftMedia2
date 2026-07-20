@@ -139,83 +139,52 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <main class="dashboard-content">
 
-<section class="dashboard-hero">
+<section class="welcome-section">
 
-    <div class="hero-text">
+    <h1>
+        Welcome back,
+        <span id="displayName">User</span> 👋
+    </h1>
 
-        <h1>
-            Welcome back,
-            <span id="displayName">User</span> 👋
-        </h1>
-
-        <p>
-            Manage your wallet, orders and digital products from one place.
-        </p>
-
-    </div>
+    <p>Here's what's going on with your account</p>
 
 </section>
 
+<div class="dashboard-grid">
 
-<div class="dashboard-stats">
+    <!-- Wallet -->
 
-    <div class="modern-card">
+    <a href="wallet.html" class="dashboard-box">
 
-        <div class="modern-icon green">
-            <i class="fa-solid fa-wallet"></i>
-        </div>
+        <p>Wallet balance</p>
 
-        <div>
+        <h2 id="walletBalance">₦0</h2>
 
-            <span>Wallet Balance</span>
+        <span>View history →</span>
 
-            <h2 id="walletBalance">
-                ₦0
-            </h2>
+    </a>
 
-        </div>
+    <!-- Orders -->
 
-    </div>
+    <a href="orders.html" class="dashboard-box">
 
+        <p>Total purchases</p>
 
-    <div class="modern-card">
+        <h2>0</h2>
 
-        <div class="modern-icon blue">
-            <i class="fa-solid fa-bag-shopping"></i>
-        </div>
+        <span>View orders →</span>
 
-        <div>
+    </a>
 
-            <span>Total Purchases</span>
+    <!-- Inventory -->
 
-            <h2 id="purchaseCount">
-                0
-            </h2>
+    <div class="dashboard-box">
 
-        </div>
+        <p>Available inventory</p>
 
-    </div>
+        <h2>331</h2>
 
-
-    <div class="modern-card">
-
-        <div class="modern-icon orange">
-            <i class="fa-solid fa-box"></i>
-        </div>
-
-        <div>
-
-            <span>Inventory</span>
-
-            <h2 id="inventoryCount">
-                331
-            </h2>
-
-            <small id="inventoryText">
-                142 Logs • 189 Tools
-            </small>
-
-        </div>
+        <small>142 Logs • 189 Tools</small>
 
     </div>
 
@@ -223,159 +192,185 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <section class="quick-actions">
 
-    <div class="section-title">
-        <h2>Quick Actions</h2>
-        <a href="logs.html">View all</a>
-    </div>
+    <div class="section-header">
 
-    <div class="action-grid">
-
-        <a href="logs.html" class="modern-action-card">
-
-            <div class="action-circle green">
-                <i class="fa-solid fa-box"></i>
-            </div>
-
-            <h3>Logs Store</h3>
-
-            <p>Buy social media accounts, VPNs and more.</p>
-
-        </a>
-
-        <a href="updates.html" class="modern-action-card">
-
-            <div class="action-circle purple">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-            </div>
-
-            <h3>Tools Store</h3>
-
-            <p>Latest updates, premium tools and pictures.</p>
-
-        </a>
-
-        <a href="wallet.html" class="modern-action-card">
-
-            <div class="action-circle blue">
-                <i class="fa-solid fa-wallet"></i>
-            </div>
-
-            <h3>Fund Wallet</h3>
-
-            <p>Add money securely to your wallet.</p>
-
-        </a>
-
-        <a href="support.html" class="modern-action-card">
-
-            <div class="action-circle orange">
-                <i class="fa-solid fa-headset"></i>
-            </div>
-
-            <h3>Support</h3>
-
-            <p>Get help from our support team.</p>
-
-        </a>
+        <h2>Quick actions</h2>
 
     </div>
+
+    <a href="logs.html" class="action-card">
+
+        <div class="action-icon blue">
+            <i class="fa-solid fa-box"></i>
+        </div>
+
+        <div>
+
+            <h3>Buy Logs</h3>
+
+            <p>Social media accounts, VPNs, proxies, etc.</p>
+
+        </div>
+
+    </a>
+
+    <a href="updates.html" class="action-card">
+
+        <div class="action-icon purple">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+        </div>
+
+        <div>
+
+            <h3>Buy Tools</h3>
+
+            <p>Updates & pictures</p>
+
+        </div>
+
+    </a>
+
+    <a href="wallet.html" class="action-card">
+
+        <div class="action-icon green">
+            <i class="fa-solid fa-wallet"></i>
+        </div>
+
+        <div>
+
+            <h3>Top Up Wallet</h3>
+
+            <p>Add funds to your balance</p>
+
+        </div>
+
+    </a>
+
+    <a href="support.html" class="action-card">
+
+        <div class="action-icon orange">
+            <i class="fa-solid fa-headset"></i>
+        </div>
+
+        <div>
+
+            <h3>Get Support</h3>
+
+            <p>Open a support ticket</p>
+
+        </div>
+
+    </a>
 
 </section>
 
 <section class="recent-orders">
 
-<div class="section-header">
+    <div class="section-header">
 
-<h2>Recent orders</h2>
+        <h2>Recent orders</h2>
 
-<a href="#">View all</a>
+        <a href="orders.html">View all</a>
 
-</div>
+    </div>
 
-<div class="empty-card">
+    <div class="empty-card">
 
-<div class="empty-icon">
-<i class="fa-regular fa-folder-open"></i>
-</div>
+        <div class="empty-icon">
 
-<h3>No orders yet</h3>
+            <i class="fa-regular fa-folder-open"></i>
 
-<p>Your purchases will appear here</p>
+        </div>
 
-</div>
+        <h3>No orders yet</h3>
+
+        <p>Your purchases will appear here</p>
+
+    </div>
 
 </section>
-
 
 <section class="coming-soon">
 
-<h2>Coming soon</h2>
+    <h2>Coming soon</h2>
 
-<div class="coming-card">
+    <a href="sms.html" class="coming-card">
 
-<div class="coming-left">
+        <div class="coming-left">
 
-<div class="coming-icon">
-<i class="fa-regular fa-message"></i>
-</div>
+            <div class="coming-icon">
 
-<span>SMS Numbers</span>
+                <i class="fa-regular fa-message"></i>
 
-</div>
+            </div>
 
-<div class="soon-badge">
-Soon
-</div>
+            <span>SMS Numbers</span>
 
-</div>
+        </div>
 
+        <div class="soon-badge">
 
-<div class="coming-card">
+            Soon
 
-<div class="coming-left">
+        </div>
 
-<div class="coming-icon">
-<i class="fa-solid fa-bolt"></i>
-</div>
+    </a>
 
-<span>SME Boosting</span>
+    <a href="sme.html" class="coming-card">
 
-</div>
+        <div class="coming-left">
 
-<div class="soon-badge">
-Soon
-</div>
+            <div class="coming-icon">
 
-</div>
+                <i class="fa-solid fa-bolt"></i>
+
+            </div>
+
+            <span>SME Boosting</span>
+
+        </div>
+
+        <div class="soon-badge">
+
+            Soon
+
+        </div>
+
+    </a>
 
 </section>
 
-
 <section class="support-card">
 
-<h2>Need quick help?</h2>
+    <h2>Need quick help?</h2>
 
-<p>
-Reach support directly if you want a faster response outside tickets.
-</p>
+    <p>
+        Reach support directly if you want a faster response outside tickets.
+    </p>
 
-<a href="https://wa.me/2349117412352" class="whatsapp-btn" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i>
-    Chat on WhatsApp
-</a>
+    <a href="https://wa.me/2349117412352" target="_blank" class="whatsapp-btn">
 
-<a href="https://t.me/+Xbt-w6-TwsozYjY0" class="telegram-btn" target="_blank">
-    <i class="fa-brands fa-telegram"></i>
-    Open Telegram
-</a>
+        <i class="fa-brands fa-whatsapp"></i>
 
-<div class="support-email">
+        Chat on WhatsApp
 
-<i class="fa-regular fa-envelope"></i>
+    </a>
 
-support@thesuftmedia.com
+    <a href="https://t.me/+Xbt-w6-TwsozYjY0" target="_blank" class="telegram-btn">
 
-</div>
+        <i class="fa-brands fa-telegram"></i>
+
+        Open Telegram
+
+    </a>
+
+    <div class="support-email">
+
+        <i class="fa-regular fa-envelope"></i>
+
+        support@thesuftmedia.com
+
+    </div>
 
 </section>
 
