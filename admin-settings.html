@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Settings | TheSuftMedia</title>
+
+<link rel="stylesheet" href="admin.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+<aside class="admin-sidebar">
+
+<div class="admin-logo">
+<h2>TheSuftMedia</h2>
+<p>Admin Panel</p>
+</div>
+
+<nav>
+
+<a href="admin-dashboard.html">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</a>
+
+<a href="admin-users.html">
+<i class="fa-solid fa-users"></i>
+Users
+</a>
+
+<a href="admin-orders.html">
+<i class="fa-solid fa-cart-shopping"></i>
+Orders
+</a>
+
+<a href="admin-products.html">
+<i class="fa-solid fa-box"></i>
+Products
+</a>
+
+<a href="admin-funding.html">
+<i class="fa-solid fa-wallet"></i>
+Funding
+</a>
+
+<a href="admin-notifications.html">
+<i class="fa-solid fa-bell"></i>
+Notifications
+</a>
+
+<a href="admin-analytics.html">
+<i class="fa-solid fa-chart-pie"></i>
+Analytics
+</a>
+
+<a href="#" class="active">
+<i class="fa-solid fa-gear"></i>
+Settings
+</a>
+
+<a href="#" id="logoutBtn">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</a>
+
+</nav>
+
+</aside>
+
+<main class="admin-main">
+
+<header class="admin-header">
+<h1>Platform Settings</h1>
+</header>
+
+<div class="table-card">
+
+<div class="input-group">
+<label>Website Name</label>
+<input
+type="text"
+id="siteName"
+placeholder="TheSuftMedia">
+</div>
+
+<div class="input-group">
+<label>Support Email</label>
+<input
+type="email"
+id="supportEmail">
+</div>
+
+<div class="input-group">
+<label>WhatsApp Number</label>
+<input
+type="text"
+id="whatsapp">
+</div>
+
+<div class="input-group">
+<label>Telegram Link</label>
+<input
+type="text"
+id="telegram">
+</div>
+
+<div class="input-group">
+<label>Bank Name</label>
+<input
+type="text"
+id="bankName">
+</div>
+
+<div class="input-group">
+<label>Account Name</label>
+<input
+type="text"
+id="accountName">
+</div>
+
+<div class="input-group">
+<label>Account Number</label>
+<input
+type="text"
+id="accountNumber">
+</div>
+
+<button
+id="saveSettingsBtn"
+class="primary-btn">
+
+Save Settings
+
+</button>
+
+</div>
+
+</main>
+
+</div>
+
+<script type="module" src="admin-settings.js"></script>
+
+</body>
+
+</html>
