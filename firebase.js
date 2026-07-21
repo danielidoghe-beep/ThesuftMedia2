@@ -14,8 +14,6 @@ import {
 
 import {
     getFirestore,
-    deleteDoc,
-increment
     doc,
     getDoc,
     setDoc,
@@ -64,8 +62,7 @@ export {
     getDoc,
     setDoc,
     updateDoc,
-deleteDoc,
-increment
+
     collection,
     addDoc,
     getDocs,
