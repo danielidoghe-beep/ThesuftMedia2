@@ -1,25 +1,13 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
 import {
-  getAuth,
-  signInWithEmailAndPassword
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+    auth,
+    signInWithEmailAndPassword,
+    signOut
+} from "./firebase.js";
 
 const form = document.getElementById("adminLoginForm");
 
 form.addEventListener("submit", async (e) => {
+
     e.preventDefault();
 
     const email = document.getElementById("email").value.trim();
@@ -35,21 +23,48 @@ form.addEventListener("submit", async (e) => {
 
         const user = userCredential.user;
 
-        // Only your email can access the admin panel
+        // Only allow the admin email
         if (user.email !== "danielidoghe@gmail.com") {
 
-            alert("Access denied.");
+            alert("Access denied. You are not an administrator.");
 
-            await auth.signOut();
+            await signOut(auth);
 
             return;
+
         }
+
+        alert("Welcome Admin!");
 
         window.location.href = "admin-dashboard.html";
 
     } catch (error) {
 
-        alert(error.message);
+        let message = "Login failed.";
+
+        switch (error.code) {
+
+            case "auth/invalid-credential":
+                message = "Incorrect email or password.";
+                break;
+
+            case "auth/user-not-found":
+                message = "No account found with this email.";
+                break;
+
+            case "auth/wrong-password":
+                message = "Incorrect password.";
+                break;
+
+            case "auth/too-many-requests":
+                message = "Too many attempts. Try again later.";
+                break;
+
+            default:
+                message = error.message;
+        }
+
+        alert(message);
 
     }
 
