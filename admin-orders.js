@@ -1,68 +1,32 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-
 import {
-    getFirestore,
+    auth,
+    db,
+
+    onAuthStateChanged,
+    signOut,
+
     collection,
     getDocs,
-    doc,
-    updateDoc,
     query,
-    orderBy
-} from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+    orderBy,
+    updateDoc,
+    doc
+} from "./firebase.js";
 
-import {
-    getAuth,
-    onAuthStateChanged,
-    signOut
-} from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-
-// ======================
-// Firebase Config
-// ======================
-
-const firebaseConfig = {
-
-    apiKey: "YOUR_API_KEY",
-
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-
-    projectId: "YOUR_PROJECT_ID",
-
-    storageBucket: "YOUR_PROJECT.appspot.com",
-
-    messagingSenderId: "YOUR_SENDER_ID",
-
-    appId: "YOUR_APP_ID"
-
-};
-
-const app = initializeApp(firebaseConfig);
-
-const db = getFirestore(app);
-
-const auth = getAuth(app);
-
-// ======================
-// Protect Admin Page
-// ======================
+// Protect page
 
 onAuthStateChanged(auth, (user) => {
 
     if (!user) {
-
-        window.location.href = "admin-login.html";
-
+        location.href = "admin-login.html";
         return;
-
     }
 
     loadOrders();
 
 });
 
-// ======================
 // Load Orders
-// ======================
 
 async function loadOrders() {
 
@@ -87,7 +51,7 @@ async function loadOrders() {
 
             <td>${order.orderId || orderDoc.id}</td>
 
-            <td>${order.name || "Unknown"}</td>
+            <td>${order.name || "-"}</td>
 
             <td>${order.product || "-"}</td>
 
@@ -98,10 +62,10 @@ async function loadOrders() {
             <td>
 
                 <button
-                    class="complete-btn"
-                    onclick="completeOrder('${orderDoc.id}')">
+                class="primary-btn"
+                onclick="completeOrder('${orderDoc.id}')">
 
-                    Complete
+                Complete
 
                 </button>
 
@@ -115,9 +79,7 @@ async function loadOrders() {
 
 }
 
-// ======================
 // Complete Order
-// ======================
 
 window.completeOrder = async (id) => {
 
@@ -127,28 +89,18 @@ window.completeOrder = async (id) => {
 
     });
 
-    alert("Order completed successfully.");
+    alert("Order completed.");
 
     loadOrders();
 
 };
 
-// ======================
 // Logout
-// ======================
 
-const logoutBtn = document.getElementById("logoutBtn");
+document.getElementById("logoutBtn").onclick = async () => {
 
-if (logoutBtn) {
+    await signOut(auth);
 
-    logoutBtn.addEventListener("click", async (e) => {
+    location.href = "admin-login.html";
 
-        e.preventDefault();
-
-        await signOut(auth);
-
-        window.location.href = "admin-login.html";
-
-    });
-
-}
+};
